@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width, initial scale 1.0">
+    <title>Hotel Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error') && urlParams.get('error') === 'conflict') {
+                alert("The room is already booked for the selected dates. Please choose another date.");
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="head">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="room.html">Room</a>
+                <a href="contacts.html">Contacts</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+        <img src="img/hero.jpg" alt="hero">
+        <div class="hero">
+            <div class="desc">
+                <div class="name">
+                    <h1 class="welcome">Welcome to</h1>
+                    <h1 class="hotelname">CasaGrande</h1>
+                    <h1 class="hotel">Hotel</h1>
+                </div>
+                <div class="hotelDesc">
+                    <p>"Experience unparalleled comfort and style at our hotel,</p>
+                    <p> where modern amenities meet exceptional service.</p> 
+                    <p> Nestled in a prime location, we offer a relaxing retreat with spacious rooms,</p> 
+                    <p> a welcoming atmosphere, and easy access to top attractions. </p>
+                    <p> Whether you're here for business or leisure, </p>
+                    <p>   we ensure a memorable stay tailored to your needs."</p>
+                </div>
+            </div>
+            <div class="form">
+                <form action="record.php" method="post">
+                    <h2>Hotel Reservation Form</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Enter your Gmail:</label>
+                         <input
+                         type="email"
+                         id="email"
+                         name="email"
+                         pattern="[a-zA-Z0-9._%+-]+@gmail\.com$"
+                         required
+                         />
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date:</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date:</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomType">Room Type:</label>
+                        <select id="roomType" name="roomType" required>
+                        <option value="">Select a room type</option>
+                        <option value="Deluxe">Deluxe Room</option>
+                        <option value="Luxury">Luxury Room</option>
+                        <option value="Supreme">Supreme Deluxe Room</option>
+                        </select><br><br>
+                    </div>
+                    <div>
+                        <label for="roomCode">Room Number:</label>
+                        <input type="text" id="roomCode" name="roomCode" required>
+                    </div>
+                <button type="submit">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Transition-->
+    <div class="trans">
+        <div class="top">
+            <h1>Our Top Rooms.</h1>
+            <ul class="gallery-list">
+                <li><img src="img/1.jpg" alt="Gallery Image 1"></li>
+                <li><img src="img/22.jpg" alt="Gallery Image 2"></li>
+                <li><img src="img/4.jpg" alt="Gallery Image 5"></li>
+                <li><img src="img/3.jpg" alt="Gallery Image 6"></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="AboutUs">
+        <video autoplay loop muted id="video-background">
+            <source src="img/hotelwelcome.mp4" type="video/mp4">
+        </video>
+        <div class="AboutDesc">
+            <h2 class="fade-in">Our Story</h2>
+            <p class="slide-in">For more than two decades, Casa Grande Hotel has proudly operated as a family-owned establishment, dedicated to providing exceptional comfort and hospitality. From our modest beginnings to our current status as a reputable name in the industry, we take great pride in our commitment to fostering a welcoming environment for all of our esteemed guests.</p>
+
+            <h2 class="fade-in">Our Mission</h2>
+            <p class="slide-in">We aim to exceed your expectations by providing a memorable experience that combines comfort, style, and unparalleled service. Our mission is to ensure every guest feels valued, creating cherished memories of your time with us.</p>
+
+            <h2 class="fade-in">Our Vision</h2>
+            <p class="slide-in">We envision becoming the foremost provider of luxury hospitality in our region, known for impeccable service, innovation, and a heartfelt commitment to guest satisfaction.</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Casa Grande Hotel. All rights reserved.</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

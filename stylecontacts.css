@@ -1,0 +1,262 @@
+/* General Body Styles */
+body {
+    background-color: #531b1b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+    transition: background-color 0.5s ease-in-out; /* Smooth background transition */
+}
+.navigate{
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*--logoContact----*/
+.logo{
+    width: 50%;
+    display: flex;
+    padding: 10px 0 0 10px;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.7;  
+  }
+  .logo img{
+    object-fit: none;
+    object-position: left;
+  }
+
+
+
+
+
+/* Navigation Bar */
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 15px;
+    width: 100%;
+    margin: auto;
+}
+.nav-links a {
+    color: #000000; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0; 
+    padding: 10px 30px;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+.nav-links a:hover {
+    background-color: #b7ddfc; 
+    color: #4d86c7; 
+    transform: scale(1.1); 
+}
+/* Header Section */
+.header {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px #000;
+    animation: fadeInDown 1.5s ease-in-out; /* Smooth fade-in animation */
+}
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for contrast */
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideUpFade 1.5s ease-in-out; /* Slide-up and fade-in animation */
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #ffcccb; /* Light coral for standout title */
+}
+
+/* Contact Information */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-info, .contact-form {
+    flex: 1 1 45%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-info h3, .contact-form h3 {
+    margin-bottom: 10px;
+    color: #ffcccb;
+}
+
+.contact-info p, .contact-info a {
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #ffcccb;
+}
+
+.social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffcccb;
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Contact Form */
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ffcccb;
+    box-shadow: 0 0 8px #ffcccb;
+}
+
+.contact-form button {
+    background-color: #853e3e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ffcccb;
+    color: #531b1b;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.map-container h3 {
+    text-align: center;
+    color: #ffcccb;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+    animation: fadeInUp 1.5s ease-in-out; /* Slide-up fade-in animation */
+}
+
+.footer p {
+    text-align: center;
+    border: 1px solid #853e3e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #853e3e;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,79 @@
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(img/confirmbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0;
+    height: 100vh; 
+    margin: 0;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    background-color: #f4f4f4; 
+    color: #333; 
+    line-height: 1.6; 
+}
+
+.container {
+    max-width: 400px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px); 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: auto;
+    font-weight: bolder;
+    color: #4a5dca; 
+    margin-bottom: 20px; 
+}    
+
+h2 {
+    margin-top: 20px; 
+    
+    margin-bottom: 10px; 
+    
+}
+
+ul {
+    list-style-type: none; 
+    
+    margin: 10px 0; 
+    
+    padding: 0; 
+    
+}
+
+li {
+    padding: 8px 0; 
+    
+    border-bottom: 1px solid #ccc; 
+    
+}
+
+li:last-child {
+    border-bottom: none; 
+    
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px; 
+    text-decoration: none; 
+    color: #fff; 
+    background-color: #4c7aaf; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+a:hover {
+    transform: scale(1.02); 
+}
+
