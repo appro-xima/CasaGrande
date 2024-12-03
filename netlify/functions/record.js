@@ -24,10 +24,10 @@ exports.handler = async (event, context) => {
 
         // Connect to MySQL database
         const connection = await mysql.createConnection({
-            host: 'localhost', // Replace with your DB host
-            user: 'root', // Replace with your DB username
-            database: 'hotel_db', // Replace with your DB name
-            password: '', // Replace with your DB password
+            host: process.env.DB_HOST, // Use environment variables for sensitive data
+            user: process.env.DB_USER,
+            database: process.env.DB_NAME,
+            password: process.env.DB_PASSWORD,
         });
 
         // Check for room availability
