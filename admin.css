@@ -165,3 +165,7 @@ form input[type="submit"]:hover {
         width: 100%;
     }
 }
+/*--hide display*/
+.hidden {
+    display: none; 
+}
