@@ -4,12 +4,12 @@ exports.handler = async (event, context) => {
     if (event.httpMethod === "POST") {
         const data = JSON.parse(event.body); // Parse the incoming JSON data
 
-        // Here you can process the data, e.g., save it to a database
-        // For this example, we will just return the data received
+        // Simulate processing the data, similar to what confirm.php would do
+        const confirmationMessage = `Reservation confirmed for ${data.name} with email ${data.email}. Check-in: ${data.checkin}, Check-out: ${data.checkout}, Room Type: ${data.roomType}, Room Number: ${data.roomCode}.`;
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: "Reservation successful", data }),
+            body: JSON.stringify({ message: confirmationMessage, data }),
         };
     }
 
