@@ -11,22 +11,24 @@
                 alert("The room is already booked for the selected dates. Please choose another date.");
             }
         };
-        document.getElementById('bookingForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
+        document.getElementById('myForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the default form submission
 
-        const response = await fetch('/.netlify/functions/record', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
 
-        const result = await response.json();
-        alert(result.message);
+    const response = await fetch('/.netlify/functions/record', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
     });
+
+    const result = await response.json();
+    console.log(result); // Handle the result as needed
+    alert(result.message); // Show an alert with the result message
+});
     </script>
 </head>
 <body>
