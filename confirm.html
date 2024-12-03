@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body>
+    <h1>Reservation Confirmation</h1>
+    <div id="confirmationMessage"></div>
+    <script>
+        // Get the query string parameters
+        const params = new URLSearchParams(window.location.search);
+        const message = params.get('message');
+
+        // Display the confirmation message
+        document.getElementById('confirmationMessage').innerText = message || "No confirmation message.";
+    </script>
+</body>
+</html>

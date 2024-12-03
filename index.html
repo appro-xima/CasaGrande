@@ -27,7 +27,8 @@
 
     const result = await response.json();
     console.log(result); // Handle the result as needed
-    alert(result.message); // Show an alert with the result message
+    alert(result.message); // Show an alert with the confirmation message
+    window.location.href = `confirm.html?message=${encodeURIComponent(result.message)}`;
 });
     </script>
 </head>
