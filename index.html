@@ -11,6 +11,22 @@
                 alert("The room is already booked for the selected dates. Please choose another date.");
             }
         };
+        document.getElementById('bookingForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch('/.netlify/functions/record', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+    });
     </script>
 </head>
 <body>
@@ -45,7 +61,7 @@
                 </div>
             </div>
             <div class="form">
-                <form action="record.php" method="post">
+                <form id="bookingForm"  method="post">
                     <h2>Hotel Reservation Form</h2>
                     <div class="form-group">
                         <label for="name">Full Name:</label>
