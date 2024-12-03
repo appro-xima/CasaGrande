@@ -1,55 +1,20 @@
-const mysql = require('mysql2/promise');
+// netlify/functions/record.js
 
 exports.handler = async (event, context) => {
-    if (event.httpMethod === 'POST') {
-        const body = JSON.parse(event.body);
-        const { name, email, roomType, roomCode, checkin, checkout } = body;
+    if (event.httpMethod === "POST") {
+        const data = JSON.parse(event.body); // Parse the incoming JSON data
 
-        // Validate inputs
-        if (!name || !email || !roomType || !roomCode || !checkin || !checkout) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ message: "All fields are required!" }),
-            };
-        }
-
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ message: "Invalid email format!" }),
-            };
-        }
-
-        // Connect to MySQL database
-        const connection = await mysql.createConnection({
-            host: process.env.DB_HOST, // Use environment variables for sensitive data
-            user: process.env.DB_USER,
-            database: process.env.DB_NAME,
-            password: process.env.DB_PASSWORD,
-        });
-
-        // Check for room availability
-        const [rows] = await connection.execute("SELECT COUNT(*) as count FROM name WHERE roomCode = ? AND (checkinDate < ? AND checkoutDate > ?)", [roomCode, checkout, checkin]);
-        if (rows[0].count > 0) {
-            return {
-                statusCode: 409,
-                body: JSON.stringify({ message: "Room is already booked!" }),
-            };
-        }
-
-        // Insert booking details
-        await connection.execute("INSERT INTO name (`Full Name`, email, roomType, roomCode, checkinDate, checkoutDate) VALUES (?, ?, ?, ?, ?, ?)", [name, email, roomType, roomCode, checkin, checkout]);
+        // Here you can process the data, e.g., save it to a database
+        // For this example, we will just return the data received
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: "Booking successful!" }),
+            body: JSON.stringify({ message: "Reservation successful", data }),
         };
     }
 
     return {
         statusCode: 405,
-        body: JSON.stringify({ message: "Method Not Allowed" }),
+        body: JSON.stringify({ message: "Method not allowed" }),
     };
 };
